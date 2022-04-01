@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tickets.create')->with([
+        'cssUrl' => 'css/app.css',
+        'title'  => 'Vytvorenie ticketu',
+    ]);
 });
