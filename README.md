@@ -4,6 +4,7 @@
 <a href="https://www.figma.com/file/FGcfdvIA9PuSFzTSHa6ngT/Odyzeo"><p style="text-align: center; background-color: #2d3748; padding: 10px; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); border-radius: 5px;"><img src="resources/figma.png" width="40"></p></a>
 
 <h2 style="text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); text-align:center; border-bottom:1px solid; width:80%; margin:auto; padding:10px; margin-bottom:20px;">Installation on Linux</h2>
+
 **Clone repository**
 
     git clone git@github.com:Dalovec/odyzeo.git
