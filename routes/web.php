@@ -18,4 +18,6 @@ Route::get('/', [TicketFormControllerAlias::class, 'create']);
 
 Route::post('/', [TicketFormControllerAlias::class, 'store'])->name('ticket-submit');
 
-Route::get('tickets', [TicketFormControllerAlias::class, 'view']);
+Route::get('/tickets', [TicketFormControllerAlias::class, 'view']);
+
+Route::get('/ticket', [TicketFormControllerAlias::class, 'viewIndividual']);

@@ -45,11 +45,22 @@ class TicketFormController extends Controller
         return back();
     }
 
-    public function view(){
-        $tickets = DB::select('select * from tickets');
+    public function view(Request $request){
+        $tickets = DB::table('tickets')->get();
         return view('tickets.view')->with([
             'tickets' => $tickets,
             'title'   => 'Všetky tickety',
+            'request' => $request,
+        ]);
+    }
+
+    public function viewIndividual(Request $request){
+        $ticketId = $request->get('id');
+        $tickets = DB::table('tickets')->where('id', $ticketId)->get();
+        return view('tickets.view')->with([
+            'tickets' => $tickets,
+            'title'   => 'Ticket č. '.$ticketId,
+            'request' => $request,
         ]);
     }
 }
