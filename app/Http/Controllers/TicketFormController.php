@@ -42,6 +42,8 @@ class TicketFormController extends Controller
 
         Mail::to('kolembus.business@gmail.com')->send(new TicketFiled($ticket));
 
+        $request->session()->put('sucess','1');
+
         return back();
     }
 

@@ -31,7 +31,17 @@
                         </ul>
                     </div>
                 @endif
+                @if(\Illuminate\Support\Facades\Session::get('sucess') == 1)
+                    <div class="">
+                        <ul class="font-light p-4 bg-green-300 w-2/3 rounded shadow-md text-center">
+                                <li class="">Ticket odoslaný</li>
+                        </ul>
+                    </div>
+                @endif
             </div>
             @csrf
         </form>
+        @php
+        \Illuminate\Support\Facades\Session::forget('success');
+        @endphp
     </div>
