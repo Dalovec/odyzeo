@@ -21,3 +21,5 @@ Route::post('/', [TicketFormControllerAlias::class, 'store'])->name('ticket-subm
 Route::get('/tickets', [TicketFormControllerAlias::class, 'view']);
 
 Route::get('/ticket', [TicketFormControllerAlias::class, 'viewIndividual']);
+
+Route::get('/close', [TicketFormControllerAlias::class, 'closeTicket'])->name('close-ticket');

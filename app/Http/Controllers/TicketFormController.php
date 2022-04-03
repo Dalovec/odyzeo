@@ -63,4 +63,12 @@ class TicketFormController extends Controller
             'request' => $request,
         ]);
     }
+
+    public function closeTicket(Request $request){
+        $ticketId = $request->get('id');
+        $ticket = DB::table('tickets')->where('id', $ticketId)->update([
+            'isOpen' => 0,
+        ]);
+        return back();
+    }
 }

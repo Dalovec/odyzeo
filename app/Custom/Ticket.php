@@ -18,7 +18,7 @@ class Ticket
 
     public function __construct($name, $mail, $message, $file)
     {
-        $this->id = uniqid('',true);
+        $this->id = uniqid('', true);
         $this->name = $name;
         $this->mail = $mail;
         $this->message = $message;
@@ -26,11 +26,12 @@ class Ticket
         $this->open = true;
     }
 
-    public function save(){
+    public function save()
+    {
         DB::insert(
             'insert into tickets (name,email,message,file,isOpen,created_at) values (?,?,?,?,?,?)',
             [
-                $this->name, $this->mail,$this->message,$this->file,$this->open, Carbon::now()->toDateTimeString()
+                $this->name, $this->mail, $this->message, $this->file, $this->open, Carbon::now()->toDateTimeString()
             ]);
     }
 
@@ -40,27 +41,34 @@ class Ticket
             'select * from tickets'
         );
     }
-    public function getFile(){
+
+    public function getFile()
+    {
         return $this->file;
     }
 
-    public function getMessage(){
+    public function getMessage()
+    {
         return $this->message;
     }
 
-    public function getId(){
+    public function getId(): string
+    {
         return $this->id;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function getMail(){
+    public function getMail()
+    {
         return $this->mail;
     }
 
-    private function isOpen(){
+    public function isOpen(): bool
+    {
         return $this->open;
     }
 }
